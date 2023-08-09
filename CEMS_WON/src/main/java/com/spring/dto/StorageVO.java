@@ -1,6 +1,7 @@
 package com.spring.dto;
 
 import java.sql.Date;
+import java.util.List;
 
 public class StorageVO {
 
@@ -8,6 +9,9 @@ public class StorageVO {
 	private Date storage_date;
 	private String cctv_filepath;
 	private String ther_filepath;
+	
+	private List<CctvVO> cctvList;
+	private List<ThermalVO> thermalList;
 	
 	public String getStorage_num() {
 		return storage_num;
@@ -32,6 +36,18 @@ public class StorageVO {
 	}
 	public void setTher_filepath(String ther_filepath) {
 		this.ther_filepath = ther_filepath;
+	}
+	public List<CctvVO> getCctvList() {
+		return cctvList;
+	}
+	public void setCctvList(List<CctvVO> cctvList) {
+		this.cctvList = cctvList;
+	}
+	public List<ThermalVO> getThermalList() {
+		return thermalList;
+	}
+	public void setThermalList(List<ThermalVO> thermalList) {
+		this.thermalList = thermalList;
 	}
 
 }

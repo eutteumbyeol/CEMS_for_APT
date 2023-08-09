@@ -12,8 +12,5 @@ public interface StorageDAO {
 	
 	public void insertStorage(StorageVO storage) throws SQLException;
 	
-	public void updateStorage(StorageVO storage_num) throws SQLException;
-	
-	public void deleteStorage(String storage_num) throws SQLException;
 
 }

@@ -9,38 +9,38 @@ import com.spring.dto.CctvVO;
 
 public class CctvDAOImpl implements CctvDAO{
 
-	private SqlSession sqlSession;
-	public void setSqlSession(SqlSession sqlSession) {
-		this.sqlSession = sqlSession;
+	private SqlSession session;
+	public void setSqlSession(SqlSession session) {
+		this.session = session;
 	}
 	
 	@Override
 	public List<CctvVO> selectSearchCctvList() throws SQLException {
-		// TODO Auto-generated method stub
-		return null;
+		List<CctvVO> cctvList = session.selectList("Cctv-Mapper.selectSearchCctvList");
+		return cctvList;
 	}
 
 	@Override
 	public CctvVO selectCctvByCctv_num(String cctv_num) throws SQLException {
-		// TODO Auto-generated method stub
-		return null;
+		CctvVO cctv = session.selectOne("Cctv-Mapper.selectCctvByCctv_num", cctv_num);
+		return cctv;
 	}
 
 	@Override
 	public void insertCctv(CctvVO cctv) throws SQLException {
-		// TODO Auto-generated method stub
+		session.update("Cctv-Mapper.insertCctv", cctv);
 		
 	}
 
 	@Override
 	public void updateCctv(CctvVO cctv_num) throws SQLException {
-		// TODO Auto-generated method stub
+		session.update("Cctv-Mapper.updateCctv", cctv_num);
 		
 	}
 
 	@Override
 	public void deleteCctv(String cctv_num) throws SQLException {
-		// TODO Auto-generated method stub
+		session.update("Cctv-Mapper.deleteCctv", cctv_num);
 		
 	}
 
